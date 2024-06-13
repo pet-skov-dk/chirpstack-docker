@@ -1,6 +1,14 @@
 version: "3"
 
 services:
+  dol:
+    image: dol:latest
+    depends_on:
+      - chirpstack
+      - mosquitto
+    container_name: dol
+    restart: unless-stopped
+
   chirpstack:
     image: chirpstack/chirpstack:4
     command: -c /etc/chirpstack
