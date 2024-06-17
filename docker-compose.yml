@@ -6,8 +6,15 @@ services:
     depends_on:
       - chirpstack
       - mosquitto
-    container_name: dol
     restart: unless-stopped
+
+  cloud-agent-client:
+    image: cloud-agent-client:latest
+    depends_on:
+      - mosquitto
+    restart: unless-stopped
+    volumes:
+      - ./client:/client
 
   chirpstack:
     image: chirpstack/chirpstack:4
