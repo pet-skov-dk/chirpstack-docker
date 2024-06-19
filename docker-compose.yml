@@ -13,8 +13,6 @@ services:
     depends_on:
       - mosquitto
     restart: unless-stopped
-    volumes:
-      - ./client:/client
 
   chirpstack:
     image: chirpstack/chirpstack:4
