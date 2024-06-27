@@ -14,7 +14,7 @@ services:
       - mosquitto
     restart: unless-stopped
     environment:
-      - DOL_CONF=sensors.json
+      - CLIENT_CONF=sensors.json
 
   chirpstack:
     image: chirpstack/chirpstack:4
