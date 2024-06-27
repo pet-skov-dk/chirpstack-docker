@@ -13,6 +13,8 @@ services:
     depends_on:
       - mosquitto
     restart: unless-stopped
+    environment:
+      - DOL_CONF=sensors.json
 
   chirpstack:
     image: chirpstack/chirpstack:4
